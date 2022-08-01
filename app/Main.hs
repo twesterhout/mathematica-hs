@@ -1,7 +1,6 @@
 module Main (main) where
 
-import MathematicaHs (someFunc)
-
+import Language.Mathematica (someFunc)
 
 main :: IO ()
 main = someFunc

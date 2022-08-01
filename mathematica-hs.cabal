@@ -20,7 +20,7 @@ source-repository head
   location:            https://github.com/twesterhout/mathematica-hs.git
 
 common common-options
-  build-depends:       base ^>= 4.13.0.0
+  build-depends:       base >= 4.13.0.0 && < 5
   
   ghc-options:         -Wall
                        -Wcompat
@@ -42,7 +42,11 @@ common common-options
 library
   import:              common-options
   hs-source-dirs:      src
-  exposed-modules:     MathematicaHs
+  exposed-modules:     Language.Mathematica
+  build-depends:       unix
+                     , process
+                     , text
+                     , bytestring
 
 executable mathematica-hs
   import:              common-options
